@@ -1,0 +1,121 @@
+\documentclass[12pt, letterpaper]{article}
+
+
+%\bibliographystyle{imsart-nameyear}
+
+%% Packages
+\usepackage{amsmath,amsthm,amsfonts,amssymb,amscd}
+\usepackage{calrsfs}
+\usepackage{mathrsfs}
+\usepackage{mathtools}
+\usepackage{hyperref}
+\usepackage[noabbrev]{cleveref}
+\usepackage{float}
+\usepackage{accents}
+\usepackage{stmaryrd}
+\usepackage{algpseudocodex}
+
+\theoremstyle{plain}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}{Proposition}[section]
+\newtheorem{lemma}{Lemma}[section]
+\newtheorem{claim}{Claim}[section]
+\newtheorem{corollary}{Corollary}[section]
+
+\theoremstyle{remark}
+\newtheorem{remark}{Remark}
+\newtheorem{assumption}{Assumption}
+
+\def\d{\mathrm{d}}
+
+
+\newcommand{\st}{\,:\,}
+%\newcommand{\norm}[1]{
+%  \relax\if@display
+%      % 0 = \displaystyle
+%      \left\| #1\right\|
+%  \else
+%      % all other styles
+%      \| #1 \|
+%  \fi}
+\newcommand{\norm}[1]{\| #1 \|}
+\crefname{assumption}{assumption}{assumptions}
+
+\begin{document}
+
+
+\title{Title}
+\author{Author(s)}
+
+\maketitle
+
+
+%\begin{abstract}
+%DRP Winter 2024
+%\end{abstract}
+
+\section{Section}
+
+This is the report for DRP 2024 at McGill University and as to do with SGD~\cite{wiki:sgd}.
+
+\subsection{Subsection}
+
+This is a subsection. In \LaTeX, you can use inline math like this: \(\int_{0}^{x}f(x)\d x\). You can also put longer/bigger equations in math mode like this:
+\[
+    \begin{bmatrix}
+        A & B^{T} \\
+        B & Q 
+    \end{bmatrix}^{-1}
+    = \begin{bmatrix}
+        (A-B^{T}Q^{-1}B)^{-1} & -(A-B^{T}Q^{-1}B)^{-1}B^{T}Q^{-1} \\
+        -Q^{-1}B(A-B^{T}Q^{-1}B)^{-1} & Q^{-1} + Q^{-1}B(A-B^{T}Q^{-1}B)^{-1}B^{T}Q^{-1}
+    \end{bmatrix}.
+\]
+Use punctuation like you would do in a regular sentence. 
+
+\subsubsection{Subsubsection}
+If you want to refer to an equation, use
+\begin{equation}\label{eq:pythagorean}
+    a^{2} + b^{2} = c^{2}.
+\end{equation}
+
+Later in the text, you can refer to \cref{eq:pythagorean} using the cleveref package. You can do the same for theorem, lemma, etc.
+
+\begin{theorem}\label{theorem:first_theorem}
+    First theorem
+\end{theorem}
+
+\begin{theorem}[Named theorem]\label{theorem:named_theorem}
+    Named theorem
+\end{theorem}
+
+\begin{lemma}
+    Some lemma
+\end{lemma}
+
+\begin{proof}
+    Put the proof here
+\end{proof}
+
+\begin{remark}
+    You can put \emph{emphasis} on a word using the command \\emph.
+\end{remark}
+
+\begin{algorithmic}[line numbering]
+    \State Initialize some things
+    \Statex Continuing
+    \For{\(n=1,\ldots, 10\)}
+        \If{True}
+        \State \Call{Some function}{x,y,z}
+        \Else
+        \State Do nothing
+        \EndIf
+    \EndFor
+    \State \Output Done
+\end{algorithmic}
+
+\bibliographystyle{alpha}
+\bibliography{biblio}
+
+\end{document}
+
